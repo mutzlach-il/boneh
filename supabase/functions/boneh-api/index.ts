@@ -16,7 +16,7 @@ function serverKey(): string {
 }
 const db = createClient(Deno.env.get("SUPABASE_URL")!, serverKey(), { auth: { persistSession: false } });
 const ALLOWED = (Deno.env.get("ALLOWED_ORIGIN") ?? "https://mutzlach-il.github.io").split(",").map((s) => s.trim());
-const MODEL = Deno.env.get("GROQ_MODEL") ?? "llama-3.3-70b-versatile";
+const MODELS = (Deno.env.get("GROQ_MODEL") ?? "openai/gpt-oss-120b,openai/gpt-oss-20b").split(",").map((s) => s.trim());
 
 const SYSTEM = `אתה נציג המענה באתר "בונה מערכות" – העסק של אברהם, בונה מערכות עצמאי מבני ברק.
 אתה כותב רק בעברית, בשפה פשוטה, חמה ומכבדת, בתשובות קצרות (עד 3–4 משפטים). לא משתמש באימוג'ים.
@@ -137,13 +137,17 @@ Deno.serve(async (req) => {
         .map((m: any) => ({ role: m.role, content: clip(m.content, 800) }));
       if (!msgs.length || msgs[msgs.length - 1].role !== "user") return json({ error: "bad" }, 400);
 
-      const r = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Authorization: `Bearer ${Deno.env.get("GROQ_API_KEY")}` },
-        body: JSON.stringify({ model: MODEL, temperature: 0.4, max_tokens: 400, messages: [{ role: "system", content: SYSTEM }, ...msgs] }),
-      });
-      if (!r.ok) throw new Error("groq " + r.status + " " + (await r.text()).slice(0, 200));
-      const data = await r.json();
+      let data: any = null, lastErr = "";
+      for (const model of MODELS) {
+        const r = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Authorization: `Bearer ${Deno.env.get("GROQ_API_KEY")}` },
+          body: JSON.stringify({ model, temperature: 0.4, max_tokens: 1200, reasoning_effort: "low", messages: [{ role: "system", content: SYSTEM }, ...msgs] }),
+        });
+        if (r.ok) { data = await r.json(); break; }
+        lastErr = "groq " + model + " " + r.status + " " + (await r.text()).slice(0, 200);
+      }
+      if (!data) throw new Error(lastErr);
       let reply: string = data.choices?.[0]?.message?.content ?? "";
 
       const m = reply.match(/<<LEAD>>([\s\S]*?)<<END>>/);
