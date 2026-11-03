@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mutzlach-il.github.io/boneh/sitemap.xml

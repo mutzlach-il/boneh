@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>בונה מערכות | מערכות, אתרים ואפליקציות לפי מידה לעסקים ולמוסדות</title>
+<meta name="description" content="בונה מערכות – מערכות ניהול, אתרים, אפליקציות, מערכות טלפוניות לטלפון כשר ואוטומציות, לעסקים, למוסדות, לגמ&quot;חים ולארגונים בציבור החרדי. איש קשר אחד ומחיר שסוכם מראש.">
+<meta name="keywords" content="בניית מערכות, בונה מערכות, מערכת ניהול, מערכת לגמ&quot;ח, מערכת למוסד, בניית אתרים, בניית אפליקציות, מערכת טלפונית, טלפון כשר, אוטומציות, תוכנה לעסק, מערכת שעות נוכחות, ניהול לקוחות, תמלול שיעורים, בני ברק">
+<meta name="author" content="בונה מערכות">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://mutzlach-il.github.io/boneh/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="בונה מערכות | יש לך רעיון? אני בונה לך אותו">
+<meta property="og:description" content="מערכות ניהול, אתרים, אפליקציות ומערכות טלפוניות לפי מידה – לעסקים ולמוסדות.">
+<meta property="og:url" content="https://mutzlach-il.github.io/boneh/">
+<meta name="theme-color" content="#0B1E36">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B1E36'/%3E%3Cpath d='M18 20h22a6 6 0 0 1 6 6v18' stroke='%23C9A45C' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3Cpath d='M16 44h34' stroke='%23fff' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "בונה מערכות",
+  "description": "בניית מערכות ניהול, אתרים, אפליקציות ומערכות טלפוניות לפי מידה לעסקים ולמוסדות",
+  "telephone": "+972-53-313-6394",
+  "email": "bnyytmrkwt@gmail.com",
+  "areaServed": "IL",
+  "address": {"@type": "PostalAddress", "addressLocality": "בני ברק", "addressCountry": "IL"},
+  "url": "https://mutzlach-il.github.io/boneh/"
+}
+</script>
+<style>
+:root{
+  --navy:#0B1E36; --navy-2:#132B4B; --blue:#1F4A85; --ink:#16212F; --muted:#5A6676;
+  --line:#E3E8EF; --bg:#FFFFFF; --bg-2:#F5F7FA; --gold:#B8914D; --gold-soft:#F3EBDC;
+  --radius:16px; --shadow:0 1px 2px rgba(11,30,54,.05),0 8px 28px rgba(11,30,54,.07);
+  --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{overflow-x:hidden}
+body{font-family:"Heebo","Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img,svg{display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:inherit;font-weight:500;font-size:16px;padding:14px 26px;border-radius:12px;border:1px solid transparent;cursor:pointer;transition:transform .2s,background .2s,box-shadow .2s,border-color .2s}
+.btn-primary{background:var(--navy);color:#fff;box-shadow:0 6px 18px rgba(11,30,54,.18)}
+.btn-primary:hover{background:var(--navy-2);transform:translateY(-1px)}
+.btn-ghost{background:#fff;color:var(--navy);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--navy)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:500;color:var(--gold);letter-spacing:.3px}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--gold);border-radius:2px}
+h1,h2,h3{color:var(--navy);line-height:1.2;font-weight:800}
+h2{font-size:clamp(28px,3.4vw,42px);margin:12px 0 14px}
+.lead{color:var(--muted);font-size:18px;max-width:640px}
+section{padding:96px 0}
+.sec-head{margin-bottom:52px}
+.center{text-align:center}.center .lead{margin:0 auto}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid transparent;transition:border-color .2s}
+header.scrolled{border-bottom-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:21px;color:var(--navy)}
+.brand small{display:block;font-weight:400;font-size:12px;color:var(--muted);margin-top:-3px}
+.mark{width:40px;height:40px;border-radius:11px;background:var(--navy);display:grid;place-items:center;flex-shrink:0}
+.nav ul{display:flex;gap:34px;list-style:none;font-size:15.5px;color:var(--muted)}
+.nav ul a:hover{color:var(--navy)}
+.nav .btn{padding:10px 20px;font-size:15px}
+.menu-btn{display:none;background:none;border:0;cursor:pointer;padding:8px}
+
+/* hero */
+.hero{padding:84px 0 72px;background:radial-gradient(1100px 520px at 15% -10%,#EEF3FA 0%,transparent 60%),linear-gradient(#fff,#fff)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.hero h1{font-size:clamp(38px,5.4vw,66px);letter-spacing:-.5px;margin:18px 0 22px}
+.hero h1 span{color:var(--blue)}
+.hero p{font-size:19px;color:var(--muted);max-width:560px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.trust{display:flex;flex-wrap:wrap;gap:22px;margin-top:38px;font-size:14.5px;color:var(--muted)}
+.trust span{display:flex;align-items:center;gap:8px}
+.trust i{width:7px;height:7px;border-radius:50%;background:var(--gold);display:inline-block}
+
+/* hero visual */
+.visual{position:relative;height:440px}
+.panel{position:absolute;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+.p-main{inset:20px 0 40px 40px;padding:22px}
+.p-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.dots{display:flex;gap:6px}.dots b{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.p-title{font-weight:700;color:var(--navy);font-size:15px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+.kpi{background:var(--bg-2);border-radius:12px;padding:12px}
+.kpi small{color:var(--muted);font-size:12px;display:block}
+.kpi strong{font-size:20px;color:var(--navy)}
+.bars{display:flex;align-items:flex-end;gap:10px;height:120px;padding:10px;background:var(--bg-2);border-radius:12px}
+.bars span{flex:1;background:linear-gradient(var(--blue),var(--navy));border-radius:6px 6px 2px 2px;transform-origin:bottom;animation:grow 1.2s ease-out both}
+.bars span:nth-child(odd){background:linear-gradient(#9DB4D6,#6F8DB8)}
+@keyframes grow{from{transform:scaleY(0)}}
+.rows{margin-top:16px;display:grid;gap:9px}
+.rows div{height:10px;border-radius:6px;background:var(--bg-2)}
+.rows div:nth-child(1){width:92%}.rows div:nth-child(2){width:74%}.rows div:nth-child(3){width:83%}
+.p-phone{width:150px;height:250px;left:0;bottom:0;padding:14px 12px;border-radius:26px;background:var(--navy);border-color:var(--navy)}
+.p-phone .scr{background:#fff;height:100%;border-radius:16px;padding:12px 10px;display:grid;gap:8px;align-content:start}
+.p-phone .scr i{display:block;height:9px;border-radius:5px;background:var(--bg-2)}
+.p-phone .scr i.g{background:var(--gold-soft);height:28px}
+.p-phone .scr i.n{background:#DCE5F2;height:38px}
+.p-note{top:0;left:70px;padding:12px 16px;display:flex;gap:10px;align-items:center;font-size:13.5px;font-weight:500;color:var(--navy);animation:float 5s ease-in-out infinite}
+.p-note em{font-style:normal;width:28px;height:28px;border-radius:8px;background:var(--gold-soft);display:grid;place-items:center}
+@keyframes float{50%{transform:translateY(-8px)}}
+
+/* stats */
+.stats{padding:0;margin-top:-1px}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:var(--radius);background:#fff;box-shadow:var(--shadow)}
+.stat{padding:28px 26px;border-inline-start:1px solid var(--line)}
+.stat:first-child{border-inline-start:0}
+.stat strong{display:block;font-size:26px;color:var(--navy);font-weight:800}
+.stat span{color:var(--muted);font-size:15px}
+
+/* services */
+.services{background:#fff}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.svc{border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;background:#fff;transition:transform .25s,box-shadow .25s,border-color .25s}
+.svc:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#D3DCE8}
+.ico{width:50px;height:50px;border-radius:13px;background:#EDF2F9;display:grid;place-items:center;margin-bottom:20px}
+.svc h3{font-size:20px;margin-bottom:10px}
+.svc p{color:var(--muted);font-size:15.5px}
+.svc .gain{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);font-size:14px;color:var(--navy);font-weight:500;display:flex;gap:8px;align-items:center}
+.svc .gain::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.svc a.more{display:inline-block;margin-top:12px;color:var(--blue);font-weight:500;font-size:14.5px}
+.svc a.more:hover{text-decoration:underline}
+.svc-wide{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:30px;background:var(--navy);border-color:var(--navy);color:#fff;padding:38px 40px}
+.svc-wide h3{color:#fff;font-size:26px}
+.svc-wide p{color:#C5D1E2;font-size:16.5px;margin-top:6px}
+.svc-wide:hover{border-color:var(--navy)}
+.btn-gold{background:var(--gold);color:#fff;white-space:nowrap}
+.btn-gold:hover{background:#A57F3F}
+
+/* experience */
+.exp{background:var(--bg-2)}
+.exp-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+.tags{display:flex;flex-wrap:wrap;gap:12px}
+.tag{background:#fff;border:1px solid var(--line);border-radius:999px;padding:11px 20px;font-size:15.5px;color:var(--navy);font-weight:500}
+.who{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:28px}
+.who div{background:#fff;border-radius:14px;padding:18px;border:1px solid var(--line)}
+.who strong{display:block;color:var(--navy)}
+.who span{font-size:14px;color:var(--muted)}
+
+/* why */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.why{padding:26px 4px}
+.why .num{font-size:13px;color:var(--gold);font-weight:700;letter-spacing:1px}
+.why h3{font-size:19px;margin:10px 0 8px}
+.why p{color:var(--muted);font-size:15.5px}
+
+/* process */
+.process{background:var(--navy);color:#fff}
+.process h2{color:#fff}.process .lead{color:#AFC0D6}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s;position:relative}
+.step{background:var(--navy-2);border:1px solid #22406A;border-radius:var(--radius);padding:30px 26px;position:relative}
+.step b{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;border:1px solid var(--gold);color:var(--gold);font-weight:700;margin-bottom:18px}
+.step h3{color:#fff;font-size:20px;margin-bottom:8px}
+.step p{color:#AFC0D6;font-size:15.5px}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.c-list{display:grid;gap:14px;margin-top:30px}
+.c-item{display:flex;align-items:center;gap:16px;padding:18px 20px;border:1px solid var(--line);border-radius:14px;transition:border-color .2s}
+.c-item:hover{border-color:var(--navy)}
+.c-item small{display:block;color:var(--muted);font-size:13.5px}
+.c-item strong{color:var(--navy);font-size:18px;direction:ltr;unicode-bidi:plaintext}
+form.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:36px;box-shadow:var(--shadow)}
+form h3{font-size:22px;margin-bottom:6px}
+form .sub{color:var(--muted);font-size:15px;margin-bottom:24px}
+label{display:block;font-size:14.5px;font-weight:500;color:var(--navy);margin-bottom:7px}
+input,textarea{width:100%;font:inherit;font-size:16px;padding:13px 15px;border:1px solid var(--line);border-radius:11px;background:var(--bg-2);color:var(--ink);transition:border-color .2s,background .2s}
+input:focus,textarea:focus{outline:0;border-color:var(--blue);background:#fff}
+textarea{min-height:120px;resize:vertical}
+.field{margin-bottom:18px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-msg{margin-top:14px;font-size:15px;min-height:22px}
+.form-msg.ok{color:#1D7A4C}.form-msg.err{color:#B3261E}
+.hp{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);opacity:0;pointer-events:none}
+
+footer{background:var(--bg-2);border-top:1px solid var(--line);padding:34px 0;font-size:14.5px;color:var(--muted)}
+.foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+
+/* chat */
+.chat-fab{position:fixed;bottom:24px;left:24px;z-index:80;display:flex;align-items:center;gap:10px;background:var(--navy);color:#fff;border:0;border-radius:999px;padding:14px 22px 14px 18px;font:inherit;font-weight:500;font-size:15.5px;cursor:pointer;box-shadow:0 10px 30px rgba(11,30,54,.28);transition:transform .2s}
+.chat-fab:hover{transform:translateY(-2px)}
+.chat-fab .pulse{width:9px;height:9px;border-radius:50%;background:#4FD18B;box-shadow:0 0 0 0 rgba(79,209,139,.6);animation:pl 2s infinite}
+@keyframes pl{70%{box-shadow:0 0 0 9px rgba(79,209,139,0)}100%{box-shadow:0 0 0 0 rgba(79,209,139,0)}}
+.chat{position:fixed;bottom:92px;left:24px;z-index:90;width:380px;max-width:calc(100vw - 32px);height:560px;max-height:calc(100vh - 120px);background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 24px 60px rgba(11,30,54,.22);display:none;flex-direction:column;overflow:hidden}
+.chat.open{display:flex;animation:pop .22s ease-out}
+@keyframes pop{from{opacity:0;transform:translateY(10px)}}
+.chat-head{background:var(--navy);color:#fff;padding:18px 20px;display:flex;align-items:center;justify-content:space-between}
+.chat-head strong{display:block;font-size:16px}
+.chat-head small{color:#AFC0D6;font-size:13px}
+.chat-x{background:none;border:0;color:#fff;cursor:pointer;font-size:24px;line-height:1;opacity:.8}
+.chat-body{flex:1;overflow-y:auto;padding:18px;background:var(--bg-2);display:flex;flex-direction:column;gap:10px}
+.msg{max-width:84%;padding:11px 15px;border-radius:16px;font-size:15px;line-height:1.55;white-space:pre-wrap;word-wrap:break-word}
+.msg.bot{background:#fff;border:1px solid var(--line);align-self:flex-start;border-bottom-right-radius:5px}
+.msg.me{background:var(--navy);color:#fff;align-self:flex-end;border-bottom-left-radius:5px}
+.typing{display:flex;gap:4px;padding:14px 16px}
+.typing i{width:7px;height:7px;border-radius:50%;background:#9AA7B8;animation:tp 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes tp{50%{opacity:.3;transform:translateY(-3px)}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+.chips button{font:inherit;font-size:13.5px;background:#fff;border:1px solid var(--line);color:var(--navy);border-radius:999px;padding:7px 13px;cursor:pointer}
+.chips button:hover{border-color:var(--navy)}
+.chat-in{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line);background:#fff}
+.chat-in input{background:var(--bg-2);padding:12px 14px}
+.chat-in button{background:var(--navy);color:#fff;border:0;border-radius:11px;width:48px;flex-shrink:0;cursor:pointer;display:grid;place-items:center}
+.chat-in button:disabled{opacity:.5}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:1000px){
+  .hero-grid,.exp-grid,.contact-grid{grid-template-columns:1fr;gap:44px}
+  .visual{height:380px;max-width:520px;width:100%;margin:0 auto}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid,.steps{grid-template-columns:repeat(2,1fr)}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(3){border-inline-start:0}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+}
+@media (max-width:760px){
+  body{font-size:16px}
+  section{padding:68px 0}
+  .wrap{padding:0 18px}
+  .nav ul,.nav .btn{display:none}
+  .menu-btn{display:block}
+  .nav.open ul{display:flex;flex-direction:column;gap:0;position:absolute;top:74px;right:0;left:0;background:#fff;border-bottom:1px solid var(--line);padding:8px 18px 16px}
+  .nav.open ul a{display:block;padding:13px 0;border-bottom:1px solid var(--bg-2);font-size:17px;color:var(--navy)}
+  .hero{padding:52px 0 56px}
+  .hero p{font-size:17px}
+  .hero-cta .btn{flex:1}
+  .visual{height:330px}
+  .p-main{inset:10px 0 30px 30px;padding:16px}
+  .bars{height:90px}
+  .p-phone{width:118px;height:200px}
+  .svc-grid,.why-grid,.steps{grid-template-columns:1fr}
+  .svc-wide{flex-direction:column;align-items:flex-start;padding:30px 26px}
+  .who,.row2{grid-template-columns:1fr}
+  form.card{padding:26px 20px}
+  .stat{padding:20px 18px}.stat strong{font-size:21px}
+  .chat-fab{bottom:16px;left:16px}
+  .chat{left:16px;bottom:80px;height:calc(100vh - 110px)}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap nav" id="nav">
+    <a href="#top" class="brand" aria-label="בונה מערכות – לעמוד הראשי">
+      <span class="mark"><svg width="22" height="22" viewBox="0 0 64 64" fill="none"><path d="M18 18h22a6 6 0 0 1 6 6v20" stroke="#C9A45C" stroke-width="7" stroke-linecap="round"/><path d="M14 46h36" stroke="#fff" stroke-width="7" stroke-linecap="round"/></svg></span>
+      <span>בונה מערכות<small>מערכות לפי מידה</small></span>
+    </a>
+    <ul>
+      <li><a href="#services">שירותים</a></li>
+      <li><a href="#experience">ניסיון</a></li>
+      <li><a href="#why">למה אני</a></li>
+      <li><a href="#process">איך זה עובד</a></li>
+      <li><a href="#contact">צור קשר</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-primary">דברו איתי</a>
+    <button class="menu-btn" id="menuBtn" aria-label="תפריט"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0B1E36" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">מערכות, אתרים ואפליקציות לפי מידה</span>
+      <h1>יש לך רעיון?<br><span>אני בונה לך אותו.</span></h1>
+      <p>מערכות ניהול, אתרים, אפליקציות ומערכות טלפוניות לעסקים, למוסדות ולארגונים. מהשיחה הראשונה ועד מערכת שעובדת אצלך, עם איש קשר אחד ומחיר שסוכם מראש.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">דברו איתי
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></a>
+        <a href="tel:0533136394" class="btn btn-ghost">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          <span dir="ltr">053-313-6394</span></a>
+      </div>
+      <div class="trust">
+        <span><i></i>מתאים לנטפרי</span>
+        <span><i></i>עובד גם עם טלפון כשר</span>
+        <span><i></i>בעברית מלאה</span>
+      </div>
+    </div>
+    <div class="visual" aria-hidden="true">
+      <div class="panel p-main">
+        <div class="p-top"><span class="p-title">לוח בקרה</span><span class="dots"><b></b><b></b><b></b></span></div>
+        <div class="kpis">
+          <div class="kpi"><small>פניות חדשות</small><strong>24</strong></div>
+          <div class="kpi"><small>טופלו</small><strong>98%</strong></div>
+          <div class="kpi"><small>תזכורות</small><strong>12</strong></div>
+        </div>
+        <div class="bars"><span style="height:45%"></span><span style="height:70%;animation-delay:.1s"></span><span style="height:55%;animation-delay:.2s"></span><span style="height:85%;animation-delay:.3s"></span><span style="height:60%;animation-delay:.4s"></span><span style="height:95%;animation-delay:.5s"></span><span style="height:75%;animation-delay:.6s"></span></div>
+        <div class="rows"><div></div><div></div><div></div></div>
+      </div>
+      <div class="panel p-phone"><div class="scr"><i class="n"></i><i></i><i style="width:70%"></i><i class="g"></i><i></i><i style="width:60%"></i><i class="g"></i></div></div>
+      <div class="panel p-note"><em><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#B8914D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></em>התזכורת נשלחה ללקוח</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-grid reveal">
+      <div class="stat"><strong>עשרות מערכות</strong><span>שבניתי לעסקים ולמוסדות</span></div>
+      <div class="stat"><strong>כשנתיים</strong><span>של בנייה בתחום</span></div>
+      <div class="stat"><strong>עסקים ומוסדות</strong><span>חצרות, ארגונים ועצמאים</span></div>
+      <div class="stat"><strong>איש קשר אחד</strong><span>מההתחלה ועד הסוף</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">שירותים</span>
+      <h2>כמעט כל מערכת שעסק או מוסד צריכים</h2>
+      <p class="lead">כל מערכת נבנית במיוחד בשבילך, לפי איך שאתה עובד, ולא להפך.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc reveal">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F4A85" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
+        <h3>מערכות ניהול</h3>
+        <p>כל המידע של העסק או המוסד במקום אחד: לקוחות, תשלומים, תרומות, הלוואות, הפקדות ועוד. בלי קבצי Excel מפוזרים.</p>
+        <div class="gain">סדר מלא ושליטה בכל רגע</div>
+      </article>
+      <article class="svc reveal">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F4A85" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01"/></svg></div>
+        <h3>אתרים ודפי נחיתה</h3>
+        <p>אתר מכובד שמציג אותך נכון ומביא פניות. נראה מצוין בטלפון ובמחשב, ומוכן להופיע בגוגל.</p>
+        <div class="gain">יותר פניות, תדמית מקצועית</div>
+      </article>
+      <article class="svc reveal">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F4A85" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></div>
+        <h3>אפליקציות</h3>
+        <p>אפליקציה שמותקנת בטלפון ובמחשב עם סמל משלה, כמו כל אפליקציה מוכרת. אפשר גם שתעבוד בלי אינטרנט.</p>
+        <div class="gain">הכול בהישג יד, בכל מקום</div>
+      </article>
+      <article class="svc reveal">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F4A85" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
+        <h3>מערכות טלפוניות לטלפון כשר</h3>
+        <p>קווים חכמים, הודעות, תזכורות ועדכונים בטלפון, גם למי שיש לו רק טלפון כשר.</p>
+        <div class="gain">מגיע לכל אחד, בלי מסך ובלי אינטרנט</div>
+      </article>
+      <article class="svc reveal">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F4A85" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></div>
+        <h3>אוטומציות</h3>
+        <p>מענה אוטומטי למיילים, דוחות, גיבויים והעברת מידע בין מערכות. מה שחוזר על עצמו, המערכת עושה לבד.</p>
+        <div class="gain">שעות עבודה שחוזרות אליך</div>
+      </article>
+      <article class="svc reveal">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F4A85" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5"/></svg></div>
+        <h3>תמלול שיעורים והקלטות</h3>
+        <p>הופך הקלטות של שיעורים ושיחות לטקסט מסודר שאפשר לחפש בו, להדפיס ולשמור.</p>
+        <div class="gain">כל שיעור שמור ונגיש בכתב</div>
+        <a class="more" href="https://divrei-kodesh.github.io/" target="_blank" rel="noopener">למערכת התמלול "דברי קודש" ←</a>
+      </article>
+      <article class="svc reveal">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F4A85" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>שעות, נוכחות ושכר</h3>
+        <p>דיווח שעות לעובדים, חישובי שכר ודוחות חודשיים, בלי חישובים ידניים ובלי ויכוחים.</p>
+        <div class="gain">פחות טעויות, יותר שקט</div>
+      </article>
+      <article class="svc reveal">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F4A85" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>פניות וקבלת קהל</h3>
+        <p>קליטה וניהול של פניות ובקשות למוסד או למשרד: מי פנה, מה ביקש, ומה נשאר לטפל.</p>
+        <div class="gain">אף פנייה לא נופלת בין הכיסאות</div>
+      </article>
+      <article class="svc reveal">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F4A85" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+        <h3>לקוחות ותשלומים</h3>
+        <p>מעקב מי שילם ומי לא, תזכורות אוטומטיות וקבלות, לעסקים קטנים ולעצמאים.</p>
+        <div class="gain">הכסף נכנס בזמן</div>
+      </article>
+      <article class="svc svc-wide reveal">
+        <div>
+          <h3>יש לך רעיון שלא מופיע כאן?</h3>
+          <p>ספר לי מה אתה צריך, ואני אבנה לך את זה. לפי מידה, בעיצוב שלך ועם השם שלך.</p>
+        </div>
+        <a href="#contact" class="btn btn-gold">ספר לי על הרעיון</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="exp" id="experience">
+  <div class="wrap exp-grid">
+    <div class="reveal">
+      <span class="eyebrow">ניסיון</span>
+      <h2>מה כבר בניתי</h2>
+      <p class="lead">עשרות מערכות שבניתי לעסקים, למוסדות ולחצרות. כל אחת נבנתה מאפס, לפי הצרכים של מי שמשתמש בה.</p>
+      <h3 style="font-size:18px;margin-top:30px">למי אני בונה</h3>
+      <div class="who" style="margin-top:14px">
+        <div><strong>מוסדות וקרנות</strong><span>ניהול כספים, חברים ומענקים</span></div>
+        <div><strong>חצרות וקהילות</strong><span>פניות, שיעורים והקלטות</span></div>
+        <div><strong>עסקים ועצמאים</strong><span>לקוחות, עובדים ותשלומים</span></div>
+        <div><strong>ארגוני חסד</strong><span>תרומות, מתנדבים ופניות</span></div>
+      </div>
+    </div>
+    <div class="tags reveal">
+      <span class="tag">מערכות ניהול</span>
+      <span class="tag">אתרים שיווקיים</span>
+      <span class="tag">אפליקציות לטלפון ולמחשב</span>
+      <span class="tag">קווים טלפוניים חכמים</span>
+      <span class="tag">אוטומציות למיילים</span>
+      <span class="tag">מערכות תמלול</span>
+      <span class="tag">שעות ושכר</span>
+      <span class="tag">דוחות וייצוא ל-Word, Excel ו-PDF</span>
+      <span class="tag">תאריכים עבריים</span>
+      <span class="tag">עבודה גם בלי אינטרנט</span>
+      <span class="tag">הרשאות לצוות</span>
+      <span class="tag">נתונים מוצפנים</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">למה לעבוד איתי</span>
+      <h2>מערכת שמתאימה בדיוק לך</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why reveal"><span class="num">01</span><h3>מכיר את הציבור</h3><p>תאריכים עבריים, סגירה בשבת, התאמה לנטפרי ולטלפון כשר. הכול מובן מאליו.</p></div>
+      <div class="why reveal"><span class="num">02</span><h3>איש קשר אחד</h3><p>מדברים ישירות עם מי שבונה. בלי מתווכים, בלי מוקדים ובלי לחכות לתשובה.</p></div>
+      <div class="why reveal"><span class="num">03</span><h3>מחיר סגור מראש</h3><p>יודעים מההתחלה כמה זה עולה. בלי הפתעות באמצע הדרך.</p></div>
+      <div class="why reveal"><span class="num">04</span><h3>פרטיות ואבטחה</h3><p>הנתונים שלך מוגנים, עם הרשאות לפי אנשים, ורק מי שצריך רואה.</p></div>
+      <div class="why reveal"><span class="num">05</span><h3>המערכת שלך</h3><p>עם הלוגו והשם שלך, בעברית מלאה ובעיצוב שמתאים לך.</p></div>
+      <div class="why reveal"><span class="num">06</span><h3>הוראות וליווי</h3><p>הוראות שימוש בתוך המערכת, כדי שכל עובד יבין מה לעשות. ואני זמין גם אחרי המסירה.</p></div>
+      <div class="why reveal"><span class="num">07</span><h3>עלויות שוטפות נמוכות</h3><p>בונה בצורה חסכונית, כדי שהמערכת לא תעלה לך הון כל חודש.</p></div>
+      <div class="why reveal"><span class="num">08</span><h3>עובד גם בלי אינטרנט</h3><p>כשצריך, המערכת ממשיכה לעבוד גם כשאין חיבור.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">איך זה עובד</span>
+      <h2>מרעיון למערכת עובדת, בארבעה שלבים</h2>
+      <p class="lead">תהליך פשוט וברור, ואתה יודע בכל שלב איפה הדברים עומדים.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><b>1</b><h3>שיחה</h3><p>מספרים לי מה צריך. אני מקשיב, שואל ומבין איך אתה עובד היום.</p></div>
+      <div class="step reveal"><b>2</b><h3>אפיון</h3><p>אני מכין תוכנית מסודרת: מה המערכת עושה, אילו מסכים יהיו בה, ומחיר סגור.</p></div>
+      <div class="step reveal"><b>3</b><h3>בנייה</h3><p>אני בונה, ואתה רואה את ההתקדמות ומעיר בדרך, כדי שהתוצאה תהיה בדיוק מה שרצית.</p></div>
+      <div class="step reveal"><b>4</b><h3>מסירה וליווי</h3><p>המערכת עוברת אליך עם הוראות מלאות, ואני נשאר זמין לשאלות ולשיפורים.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <span class="eyebrow">צור קשר</span>
+      <h2>בואו נדבר על מה שאתם צריכים</h2>
+      <p class="lead">השיחה הראשונה בלי התחייבות. ספרו לי על הרעיון, ואחזור אליכם עם תוכנית והצעה.</p>
+      <div class="c-list">
+        <a class="c-item" href="tel:0533136394">
+          <span class="ico" style="margin:0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F4A85" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
+          <span><small>טלפון</small><strong>053-313-6394</strong></span>
+        </a>
+        <a class="c-item" href="mailto:bnyytmrkwt@gmail.com">
+          <span class="ico" style="margin:0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F4A85" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></span>
+          <span><small>מייל</small><strong>bnyytmrkwt@gmail.com</strong></span>
+        </a>
+      </div>
+    </div>
+    <form class="card reveal" id="leadForm" novalidate>
+      <h3>השאירו פרטים</h3>
+      <p class="sub">אחזור אליכם בהקדם.</p>
+      <div class="row2">
+        <div class="field"><label for="fName">שם</label><input id="fName" name="name" autocomplete="name" required maxlength="80"></div>
+        <div class="field"><label for="fContact">טלפון או מייל</label><input id="fContact" name="contact" required maxlength="120" dir="auto"></div>
+      </div>
+      <div class="field"><label for="fNeed">מה אתם צריכים?</label><textarea id="fNeed" name="need" required maxlength="2000" placeholder="כמה מילים על הרעיון או על מה שמפריע לכם היום"></textarea></div>
+      <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn btn-primary" type="submit" style="width:100%">שליחה</button>
+      <div class="form-msg" id="formMsg" role="status"></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© <span id="yr"></span> בונה מערכות · מערכות, אתרים ואפליקציות לפי מידה · בני ברק</span>
+    <span><a href="tel:0533136394" dir="ltr">053-313-6394</a> · <a href="mailto:bnyytmrkwt@gmail.com">bnyytmrkwt@gmail.com</a></span>
+  </div>
+</footer>
+
+<!-- CHAT -->
+<button class="chat-fab" id="chatFab" aria-label="פתיחת צ'אט"><span class="pulse"></span>יש שאלה? כתבו לי</button>
+<div class="chat" id="chat" role="dialog" aria-label="צ'אט עם בונה מערכות">
+  <div class="chat-head">
+    <div><strong>בונה מערכות</strong><small>מענה מיידי, ואברהם יחזור אליכם</small></div>
+    <button class="chat-x" id="chatX" aria-label="סגירה">×</button>
+  </div>
+  <div class="chat-body" id="chatBody"></div>
+  <form class="chat-in" id="chatForm">
+    <input id="chatInput" placeholder="כתבו כאן..." autocomplete="off" maxlength="800" dir="auto">
+    <button id="chatSend" aria-label="שליחה"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z" transform="scale(-1,1) translate(-24,0)"/></svg></button>
+  </form>
+</div>
+
+<script>
+/* ===== הגדרות ===== */
+const API_URL = "https://jngptlyolsppxjpnayfm.supabase.co/functions/v1/boneh-api";
+const API_KEY = "sb_publishable_njreDFaN0AiJET1paPlcEg_V1DHFT1N"; // מפתח ציבורי בלבד – בטוח להופיע בדף
+
+const apiReady = true;
+async function api(action, payload){
+  const r = await fetch(API_URL, {method:"POST", headers:{"Content-Type":"application/json","apikey":API_KEY,"Authorization":"Bearer "+API_KEY}, body:JSON.stringify({action, ...payload})});
+  if(!r.ok) throw new Error("http "+r.status);
+  return r.json();
+}
+
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+/* header + menu */
+const header = document.querySelector("header");
+addEventListener("scroll", ()=>header.classList.toggle("scrolled", scrollY>8), {passive:true});
+const nav = document.getElementById("nav");
+document.getElementById("menuBtn").onclick = ()=>nav.classList.toggle("open");
+nav.querySelectorAll("ul a").forEach(a=>a.onclick=()=>nav.classList.remove("open"));
+
+/* reveal */
+const io = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+/* visitor counter (once per browser per day) */
+(function(){
+  if(!apiReady) return;
+  let vid; try{vid=localStorage.getItem("bm_vid"); if(!vid){vid=crypto.randomUUID(); localStorage.setItem("bm_vid",vid);} }catch(e){vid="na";}
+  const today = new Date().toISOString().slice(0,10);
+  let last; try{last=localStorage.getItem("bm_last")}catch(e){}
+  if(last===today) return;
+  api("visit",{visitor:vid, page:location.pathname, ref:document.referrer.slice(0,200)}).then(()=>{try{localStorage.setItem("bm_last",today)}catch(e){}}).catch(()=>{});
+})();
+
+/* lead form */
+const form = document.getElementById("leadForm"), fmsg = document.getElementById("formMsg");
+form.addEventListener("submit", async e=>{
+  e.preventDefault();
+  const d = Object.fromEntries(new FormData(form));
+  if(d.website) return;
+  if(!d.name.trim()||!d.contact.trim()||!d.need.trim()){fmsg.className="form-msg err";fmsg.textContent="נא למלא את כל השדות.";return;}
+  const btn = form.querySelector("button"); btn.disabled=true; btn.textContent="שולח...";
+  try{
+    if(!apiReady) throw new Error("not ready");
+    await api("lead",{name:d.name.trim(), contact:d.contact.trim(), need:d.need.trim(), source:"טופס"});
+    form.reset(); fmsg.className="form-msg ok"; fmsg.textContent="תודה! הפרטים התקבלו, ואחזור אליכם בהקדם.";
+  }catch(err){
+    fmsg.className="form-msg err"; fmsg.innerHTML='לא הצלחנו לשלוח כרגע. אפשר להתקשר ל-<a href="tel:0533136394" dir="ltr">053-313-6394</a> או לכתוב ל-<a href="mailto:bnyytmrkwt@gmail.com">bnyytmrkwt@gmail.com</a>';
+  }finally{btn.disabled=false; btn.textContent="שליחה";}
+});
+
+/* chat */
+const chat=document.getElementById("chat"), body=document.getElementById("chatBody"), cform=document.getElementById("chatForm"), cin=document.getElementById("chatInput"), csend=document.getElementById("chatSend");
+let history=[], session, started=false, busy=false;
+try{session=sessionStorage.getItem("bm_sid")||crypto.randomUUID(); sessionStorage.setItem("bm_sid",session);}catch(e){session=String(Math.random()).slice(2);}
+function add(text, who){const m=document.createElement("div");m.className="msg "+who;m.textContent=text;body.appendChild(m);body.scrollTop=body.scrollHeight;return m;}
+function chips(list){const c=document.createElement("div");c.className="chips";list.forEach(t=>{const b=document.createElement("button");b.type="button";b.textContent=t;b.onclick=()=>{c.remove();send(t)};c.appendChild(b)});body.appendChild(c);body.scrollTop=body.scrollHeight;}
+function openChat(){
+  chat.classList.add("open"); cin.focus();
+  if(!started){started=true;
+    add("שלום וברכה! כאן בונה מערכות.\nספרו לי מה אתם צריכים, ואשמח לעזור ולהסביר. אם תרצו, אברהם יחזור אליכם אישית.","bot");
+    chips(["מה אתה בונה?","אני צריך מערכת לעסק","אני צריך מערכת למוסד","כמה זה עולה?"]);
+  }
+}
+document.getElementById("chatFab").onclick=()=>chat.classList.contains("open")?chat.classList.remove("open"):openChat();
+document.getElementById("chatX").onclick=()=>chat.classList.remove("open");
+cform.addEventListener("submit",e=>{e.preventDefault();const t=cin.value.trim();if(t)send(t);});
+async function send(text){
+  if(busy) return; busy=true; csend.disabled=true;
+  body.querySelectorAll(".chips").forEach(c=>c.remove());
+  add(text,"me"); cin.value="";
+  history.push({role:"user",content:text});
+  const t=document.createElement("div");t.className="msg bot typing";t.innerHTML="<i></i><i></i><i></i>";body.appendChild(t);body.scrollTop=body.scrollHeight;
+  try{
+    if(!apiReady) throw new Error("not ready");
+    const r=await api("chat",{session, messages:history.slice(-16)});
+    t.remove(); add(r.reply,"bot"); history.push({role:"assistant",content:r.reply});
+  }catch(err){
+    t.remove(); add("מצטער, יש כרגע תקלה קטנה. אפשר להתקשר ל-053-313-6394 או להשאיר פרטים בטופס שבתחתית הדף, ואברהם יחזור אליכם.","bot");
+  }finally{busy=false; csend.disabled=false; cin.focus();}
+}
+</script>
+</body>
+</html>
