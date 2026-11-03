@@ -170,6 +170,6 @@ Deno.serve(async (req) => {
     return json({ error: "unknown action" }, 400);
   } catch (e) {
     console.error(e);
-    return json({ error: "server" }, 500);
+    return json({ error: "server", detail: String((e as any)?.message ?? e).replace(/gsk_[A-Za-z0-9]+/g, "***").slice(0, 300) }, 500);
   }
 });
