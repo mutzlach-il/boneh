@@ -67,9 +67,19 @@ function limited(key: string, max: number, windowMs: number) {
   return arr.length > max;
 }
 
+// פנייה רלוונטית: יש טלפון או מייל תקינים, ותיאור אמיתי של הצורך
+function relevant(l: { name: string; contact: string; need: string }) {
+  const digits = l.contact.replace(/\D/g, "");
+  const okContact = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(l.contact.trim()) || (digits.length >= 9 && digits.length <= 13);
+  const okNeed = l.need.replace(/\s/g, "").length >= 4;
+  const okName = l.name.replace(/\s/g, "").length >= 2;
+  const spam = /(https?:\/\/|www\.|casino|crypto|viagra|seo service)/i.test(l.need + " " + l.name);
+  return okContact && okNeed && okName && !spam;
+}
+
 async function notify(lead: { name: string; contact: string; need: string; source: string }) {
   const service_id = Deno.env.get("EMAILJS_SERVICE_ID");
-  if (!service_id) return;
+  if (!service_id || !relevant(lead)) return;
   try {
     await fetch("https://api.emailjs.com/api/v1.0/email/send", {
       method: "POST",
@@ -80,6 +90,7 @@ async function notify(lead: { name: string; contact: string; need: string; sourc
         user_id: Deno.env.get("EMAILJS_PUBLIC_KEY"),
         accessToken: Deno.env.get("EMAILJS_PRIVATE_KEY"),
         template_params: {
+          to_email: Deno.env.get("NOTIFY_EMAIL") ?? "ay0533115854@gmail.com",
           subject: `פנייה חדשה מהאתר (${lead.source}): ${lead.name}`,
           name: lead.name,
           contact: lead.contact,
