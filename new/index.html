@@ -89,11 +89,21 @@ header.solid{background:rgba(7,20,42,.86);backdrop-filter:blur(14px) saturate(1.
 .device{position:relative;perspective:1600px}
 .screen{position:relative;background:linear-gradient(180deg,#0F2547,#0A1A34);border:1px solid rgba(255,255,255,.12);border-radius:22px;box-shadow:0 40px 90px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.08);padding:18px;transform:rotateY(-8deg) rotateX(4deg);transition:transform .6s}
 .device:hover .screen{transform:none}
+.screen::before{content:"";position:absolute;inset:-1px;border-radius:23px;padding:1px;background:conic-gradient(from var(--a,0deg),transparent 0 70%,rgba(231,203,143,.9) 80%,transparent 90%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:spin 6s linear infinite;pointer-events:none}
+@property --a{syntax:"<angle>";inherits:false;initial-value:0deg}
+@keyframes spin{to{--a:360deg}}
 .scr-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
 .scr-dots{display:flex;gap:6px}.scr-dots b{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.16)}
 .scr-tabs{display:flex;gap:6px;background:rgba(255,255,255,.05);padding:4px;border-radius:10px}
-.scr-tabs button{background:none;border:0;color:#9FB0C8;font-size:12.5px;padding:6px 10px;border-radius:7px;cursor:pointer;transition:.2s}
-.scr-tabs button.on{background:rgba(231,203,143,.16);color:var(--gold-2)}
+.scr-tabs button{position:relative;overflow:hidden;background:none;border:0;color:#9FB0C8;font-size:12.5px;padding:7px 12px;border-radius:8px;cursor:pointer;transition:background .2s,color .2s;outline:none;-webkit-tap-highlight-color:transparent}
+.scr-tabs button:hover{color:#fff}
+.scr-tabs button:focus{outline:none}
+.scr-tabs button:focus-visible{box-shadow:0 0 0 2px rgba(231,203,143,.6)}
+.scr-tabs button.on{background:rgba(231,203,143,.16);color:var(--gold-2);font-weight:600}
+.scr-tabs button.on::after{content:"";position:absolute;right:0;bottom:0;height:2px;width:100%;background:var(--gold-2);transform-origin:right;animation:tabprog 6s linear forwards}
+.scr-tabs.paused button.on::after{animation:none;transform:none}
+@keyframes tabprog{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+button:focus:not(:focus-visible){outline:none}
 .view{display:none;min-height:330px;animation:fade .5s ease}
 .view.on{display:block}
 @keyframes fade{from{opacity:0;transform:translateY(8px)}}
@@ -128,8 +138,9 @@ header.solid{background:rgba(7,20,42,.86);backdrop-filter:blur(14px) saturate(1.
 .fstep small{margin-inline-start:auto;font-size:11.5px;color:#8FA2BF}
 .float-card{position:absolute;background:#fff;color:var(--navy);border-radius:14px;padding:12px 16px;box-shadow:0 18px 40px rgba(0,0,0,.3);font-size:13.5px;font-weight:600;display:flex;align-items:center;gap:10px;animation:bob 5s ease-in-out infinite}
 .float-card em{font-style:normal;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:var(--gold-soft)}
-.fc1{top:-22px;left:-18px}
-.fc2{bottom:-24px;right:30px;animation-delay:-2.5s}
+.fc1{top:-28px;right:-18px;z-index:3}
+.fc2{bottom:-26px;left:-22px;z-index:3;animation-delay:-2.5s}
+#fcText{transition:opacity .3s}
 .fc2 em{background:#E4F6EE}
 @keyframes bob{50%{transform:translateY(-9px)}}
 
@@ -416,6 +427,30 @@ footer{background:#050E1E;color:#8FA2BF;padding:40px 0 34px;font-size:14.5px}
 .chat-in button{background:var(--navy);color:#fff;border:0;border-radius:11px;width:48px;flex-shrink:0;cursor:pointer;display:grid;place-items:center}
 .chat-in button:disabled{opacity:.5}
 
+.std{background:linear-gradient(180deg,var(--bg-2),#fff)}
+.std-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.sd{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
+.sd .si{width:40px;height:40px;border-radius:11px;background:var(--gold-soft);display:grid;place-items:center;flex-shrink:0}
+.sd strong{display:block;color:var(--navy);font-size:16px;margin-bottom:2px}
+.sd span{color:var(--muted);font-size:14px;line-height:1.5}
+.me{background:var(--navy);color:#fff;overflow:hidden}
+.me::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 380px at 10% 50%,rgba(201,162,94,.16),transparent 60%),radial-gradient(600px 380px at 95% 20%,rgba(42,91,168,.35),transparent 60%)}
+.me-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center;position:relative}
+.me-card{background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);border-radius:26px;padding:40px;text-align:center}
+.me-card .mono{width:120px;height:120px;border-radius:32px;margin:0 auto 22px;display:grid;place-items:center;background:linear-gradient(145deg,var(--navy-3),var(--navy));border:1px solid rgba(231,203,143,.4);box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.me-card h3{color:#fff;font-size:24px}
+.me-card p{color:#AFC0D6;font-size:15px;margin-top:4px}
+.me-card .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:26px}
+.me-card .facts div{background:rgba(255,255,255,.05);border-radius:14px;padding:14px 8px}
+.me-card .facts strong{display:block;color:var(--gold-2);font-size:19px;font-weight:800}
+.me-card .facts span{font-size:12.5px;color:#AFC0D6}
+.me h2{color:#fff}
+.me .say{font-size:19px;color:#D5DEEB;line-height:1.8}
+.me .say p+p{margin-top:16px}
+.me .sign{margin-top:26px;color:var(--gold-2);font-weight:700;font-size:18px}
+@media (max-width:1060px){.std-grid{grid-template-columns:repeat(2,1fr)}.me-grid{grid-template-columns:1fr;gap:36px}}
+@media (max-width:760px){.std-grid{grid-template-columns:1fr}.me-card{padding:28px 20px}.me .say{font-size:17px}}
+
 /* mobile bar */
 .mbar{display:none}
 
@@ -453,7 +488,7 @@ footer{background:#050E1E;color:#8FA2BF;padding:40px 0 34px;font-size:14.5px}
   .hero{padding:108px 0 80px}
   .hero p.sub{font-size:17.5px}
   .hero-cta .btn{flex:1}
-  .fc1{left:-6px;top:-26px}.fc2{right:10px}
+  .fc1{right:-4px;top:-30px}.fc2{left:-4px}
   .kp strong{font-size:18px}
   .svc-grid,.ba-grid,.why-grid,.timeline{grid-template-columns:1fr}
   .svc-wide{flex-direction:column;align-items:flex-start;padding:32px 26px}
@@ -492,6 +527,7 @@ footer{background:#050E1E;color:#8FA2BF;padding:40px 0 34px;font-size:14.5px}
       <li><a href="#services">שירותים</a></li>
       <li><a href="#lab">נסו בעצמכם</a></li>
       <li><a href="#calc">מחשבון זמן</a></li>
+      <li><a href="#about">מי אני</a></li>
       <li><a href="#process">איך זה עובד</a></li>
       <li><a href="#faq">שאלות</a></li>
     </ul>
@@ -546,7 +582,7 @@ footer{background:#050E1E;color:#8FA2BF;padding:40px 0 34px;font-size:14.5px}
         </div>
         <div class="view">
           <div class="call">
-            <div class="phone"><div class="lcd">שיחה נכנסת<br>03-XXX-XXXX</div><div class="keys"><i>1</i><i class="hot">2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i><i>9</i></div></div>
+            <div class="phone"><div class="lcd">שיחה נכנסת<br><span dir="ltr">03-1234567</span></div><div class="keys"><i>1</i><i class="hot">2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i><i>9</i></div></div>
             <div class="bubbles">
               <div class="bub"><b>הקו:</b> שלום, הגעתם לקו המידע. לבירור יתרה הקישו 1, להזמנת תור הקישו 2.</div>
               <div class="bub" style="animation-delay:.9s"><b>המתקשר הקיש:</b> 2</div>
@@ -683,6 +719,27 @@ footer{background:#050E1E;color:#8FA2BF;padding:40px 0 34px;font-size:14.5px}
         </div>
         <a href="#contact" class="btn btn-gold">ספרו לי על הרעיון</a>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STANDARD ===== -->
+<section class="std" id="std">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">הסטנדרט שלי</span>
+      <h2>מה מקבלים בכל מערכת שאני בונה</h2>
+      <p class="lead">לא משנה אם זו מערכת קטנה או גדולה, אלה הדברים שאני מקפיד עליהם תמיד.</p>
+    </div>
+    <div class="std-grid">
+      <div class="sd reveal"><span class="si"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B38A45" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><div><strong>עברית מלאה</strong><span>עם תאריכים עבריים, מימין לשמאל</span></div></div>
+      <div class="sd reveal d1"><span class="si"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B38A45" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><div><strong>הוראות בתוך המערכת</strong><span>כל עובד מבין מה לעשות</span></div></div>
+      <div class="sd reveal d2"><span class="si"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B38A45" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><div><strong>הרשאות לפי אנשים</strong><span>כל אחד רואה רק את מה שצריך</span></div></div>
+      <div class="sd reveal d3"><span class="si"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B38A45" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><div><strong>מתאים לנטפרי</strong><span>נבדק שהכול נפתח כמו שצריך</span></div></div>
+      <div class="sd reveal"><span class="si"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B38A45" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><div><strong>בטלפון ובמחשב</strong><span>נראה טוב בכל מסך</span></div></div>
+      <div class="sd reveal d1"><span class="si"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B38A45" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><div><strong>השם והלוגו שלכם</strong><span>המערכת נראית כמו שלכם</span></div></div>
+      <div class="sd reveal d2"><span class="si"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B38A45" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><div><strong>דוחות מסודרים</strong><span>ייצוא לקובצי Excel ו-PDF כשצריך</span></div></div>
+      <div class="sd reveal d3"><span class="si"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B38A45" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><div><strong>ליווי אחרי המסירה</strong><span>אני זמין לשאלות ולשיפורים</span></div></div>
     </div>
   </div>
 </section>
@@ -904,6 +961,32 @@ footer{background:#050E1E;color:#8FA2BF;padding:40px 0 34px;font-size:14.5px}
   </div>
 </section>
 
+<!-- ===== ABOUT ===== -->
+<section class="me" id="about">
+  <div class="wrap me-grid">
+    <div class="me-card reveal">
+      <div class="mono"><svg width="56" height="56" viewBox="0 0 64 64" fill="none"><path d="M18 18h22a6 6 0 0 1 6 6v20" stroke="#E7CB8F" stroke-width="6" stroke-linecap="round"/><path d="M14 46h36" stroke="#fff" stroke-width="6" stroke-linecap="round"/></svg></div>
+      <h3>אברהם</h3>
+      <p>בונה מערכות · בני ברק</p>
+      <div class="facts">
+        <div><strong>עשרות</strong><span>מערכות</span></div>
+        <div><strong>כשנתיים</strong><span>בתחום</span></div>
+        <div><strong>אחד</strong><span>איש קשר</span></div>
+      </div>
+    </div>
+    <div class="reveal d1">
+      <span class="eyebrow">נעים להכיר</span>
+      <h2>מי שמדבר איתכם, הוא מי שבונה</h2>
+      <div class="say">
+        <p>כבר כשנתיים אני בונה מערכות לעסקים, למוסדות ולארגונים, ובניתי עשרות מערכות. אני עובד לבד, ולכן אתם לא עוברים בין נציגים. אתם מספרים לי מה צריך, ואני בונה.</p>
+        <p>אני מכיר את הציבור ויודע מה חשוב לכם: עברית מלאה, תאריכים עבריים, נטפרי, טלפון כשר, ופשטות שכל אחד יכול לעבוד איתה. המטרה שלי היא שתקבלו מערכת שחוסכת לכם זמן מהיום הראשון.</p>
+      </div>
+      <div class="sign">אברהם, בונה מערכות</div>
+      <a href="#contact" class="btn btn-gold" style="margin-top:26px">בואו נדבר</a>
+    </div>
+  </div>
+</section>
+
 <!-- ===== PROCESS ===== -->
 <section id="process">
   <div class="wrap">
@@ -1060,11 +1143,13 @@ $$(".reveal").forEach(el=>io.observe(el));
 const views=$$(".screen .view"), stabs=$$("#scrTabs button");
 let vi=0, vTimer;
 const fcTexts=["התזכורת נשלחה ל-38 לקוחות","התור נקבע ונרשם ביומן","הפנייה קיבלה מענה תוך דקה"];
-function showView(i){vi=i;views.forEach((v,k)=>v.classList.toggle("on",k===i));stabs.forEach((b,k)=>b.classList.toggle("on",k===i));$("#fcText").textContent=fcTexts[i];
+function showView(i){vi=i;views.forEach((v,k)=>v.classList.toggle("on",k===i));stabs.forEach((b,k)=>b.classList.toggle("on",k===i));
+  const fc=$("#fcText");fc.style.opacity=0;setTimeout(()=>{fc.textContent=fcTexts[i];fc.style.opacity=1},250);
   views[i].querySelectorAll(".chart span,.bub").forEach(el=>{el.style.animation="none";el.offsetHeight;el.style.animation=""});
   if(i===2){const st=$$("#miniFlow .fstep");st.forEach(s=>s.classList.remove("on"));st.forEach((s,k)=>setTimeout(()=>s.classList.add("on"),300+k*550));}}
-stabs.forEach(b=>b.onclick=()=>{showView(+b.dataset.v);clearInterval(vTimer);vTimer=setInterval(()=>showView((vi+1)%3),6000)});
-if(!RM) vTimer=setInterval(()=>showView((vi+1)%3),6000);
+let vPause;
+stabs.forEach(b=>b.onclick=()=>{b.blur();showView(+b.dataset.v);clearInterval(vTimer);clearTimeout(vPause);$("#scrTabs").classList.add("paused");vPause=setTimeout(()=>{$("#scrTabs").classList.remove("paused");showView(vi);vTimer=setInterval(()=>showView((vi+1)%3),6000)},12000)});
+if(!RM) vTimer=setInterval(()=>showView((vi+1)%3),6000); else $("#scrTabs").classList.add("paused");
 
 /* before / after */
 const ba=$("#ba");
