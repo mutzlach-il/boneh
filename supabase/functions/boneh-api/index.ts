@@ -90,7 +90,7 @@ async function notify(lead: { name: string; contact: string; need: string; sourc
         user_id: Deno.env.get("EMAILJS_PUBLIC_KEY"),
         accessToken: Deno.env.get("EMAILJS_PRIVATE_KEY"),
         template_params: {
-          to_email: Deno.env.get("NOTIFY_EMAIL") ?? "ay0533115854@gmail.com",
+          to_email: Deno.env.get("NOTIFY_EMAIL") ?? "ay0533115854@gmail.com,bnyytmrkwt@gmail.com",
           subject: `פנייה חדשה מהאתר (${lead.source}): ${lead.name}`,
           name: lead.name,
           contact: lead.contact,
