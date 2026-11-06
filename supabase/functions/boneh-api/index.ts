@@ -15,7 +15,7 @@ function serverKey(): string {
   } catch { return ""; }
 }
 const db = createClient(Deno.env.get("SUPABASE_URL")!, serverKey(), { auth: { persistSession: false } });
-const ALLOWED = (Deno.env.get("ALLOWED_ORIGIN") ?? "https://mutzlach-il.github.io").split(",").map((s) => s.trim());
+const ALLOWED = (Deno.env.get("ALLOWED_ORIGIN") ?? "https://bonehsystems.co.il,https://www.bonehsystems.co.il,https://mutzlach-il.github.io").split(",").map((s) => s.trim());
 const MODELS = (Deno.env.get("GROQ_MODEL") ?? "openai/gpt-oss-120b,openai/gpt-oss-20b").split(",").map((s) => s.trim());
 
 const SYSTEM = `אתה נציג המענה באתר "בונה מערכות" – חברה לפיתוח מערכות לפי מידה מבני ברק. כתוב תמיד בלשון רבים בשם החברה ("אנחנו"), ולא בשם אדם אחד.
