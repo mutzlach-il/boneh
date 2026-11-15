@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /dl/
 Sitemap: https://bonehsystems.co.il/sitemap.xml
